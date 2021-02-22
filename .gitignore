@@ -1,3 +1,9 @@
+# VC bot specific stuff
+chatusers*.json
+/sfx
+
+# Python stuff
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
