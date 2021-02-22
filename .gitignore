@@ -1,6 +1,8 @@
 # VC bot specific stuff
 chatusers*.json
 /sfx
+/.vscode
+vcbot.code-workspace
 
 # Python stuff
 
