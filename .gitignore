@@ -2,7 +2,7 @@
 chatusers*.json
 /sfx
 /.vscode
-vcbot.code-workspace
+versioncontrolbot.code-workspace
 
 # Python stuff
 
