@@ -2,7 +2,7 @@
 
 > BEEP BOP BOOP 🤖
 
-My custom Twitch.tv chatbot that I use during my gameplay/programming streams to engage more with the chat. It was built in response to none of the publicly available bots doing exactly what I want, for free, with no strings attached. I just want to talk to my chat and allow them to play sound effects and have a good time.
+My custom Twitch.tv chatbot that I use during my gameplay/programming streams to engage more with the chat. It was built in response to none of the publicly available bots doing exactly what I want, for free, with no strings attached. I just want to talk to my chat and allow them to play sound effects and have a good time, and not worry about extensions that take real world money.
 
 ## Main Features
 - A chat-wide currency system. People who engage in chat earn 'gil' over time which they can spend on rewards.
