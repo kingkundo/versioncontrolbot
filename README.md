@@ -29,4 +29,5 @@ This .env file should include the following data:
 | SFX_HELP_STR | The message you want to appear when the users type !sfxlist | SFX_HELP_STR="This is an SFXList message" |
 
 ## License
-You are free to clone or fork this repo and make your own bots based on using it as a framework. If you do this, please retain the credit to me in the source code. [Also a follow on Twitch would go a long way <3](https://twitch.tv/version_control)
+You are free to clone or fork this repo and make your own bots based on using it as a framework. If you do this, please retain the credit to me in the source code. 
+<a href="https://twitch.tv/version_control" target="_blank">Also a follow on Twitch would go a long way <3</a>
