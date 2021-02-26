@@ -5,9 +5,8 @@
 import json
 from os import environ
 from datetime import datetime
-from collections import defaultdict
 from common import bot
-from gil import MINIMUM_POSSIBLE_BALANCE, JSON_KEY as CURRENCY_JSON_KEY, get_currency_str
+from currency import MINIMUM_POSSIBLE_BALANCE, JSON_KEY as CURRENCY_JSON_KEY, get_currency_str
 
 USERDATA_JSON_NAME = 'chatusers'
 USERDATA_JSON_FILE = f'{USERDATA_JSON_NAME}.json'
@@ -26,7 +25,7 @@ def __set_up_user(user_name : str):
     if not CURRENCY_JSON_KEY in userdata[user_name]:
         userdata[user_name][CURRENCY_JSON_KEY] = MINIMUM_POSSIBLE_BALANCE
 
-async def give_all_chat_users_gil(amount : int):
+async def give_all_chat_users_currency(amount : int):
     'Loops through every user in chat, gives them the amount passed as parameter'
     chat_users = await bot.get_chatters(environ['CHANNEL'])
     for user in chat_users.all:

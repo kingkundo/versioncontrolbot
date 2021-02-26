@@ -11,7 +11,7 @@ from os import environ, getcwd
 import common
 import chatuser
 import commands
-import gil
+import currency
 import events
 
 # INIT ------------------------------

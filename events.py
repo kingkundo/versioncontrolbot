@@ -5,11 +5,14 @@
 from os import environ
 from time import time
 from common import bot, set_streamer_info
-from chatuser import give_all_chat_users_gil
+from chatuser import give_all_chat_users_currency
+
+# GLOBALS ----------------------------
+MINIMUM_SECS_BETWEEN_PAYOUTS = 900
+AMOUNT_TO_PAY_OUT_REGULARLY = 100
 
 # EVENTS ------------------------------
 
-# EVENT - ON BOT ENTERING CHAT
 @bot.event
 async def event_ready():
     'Event thats called once when the bot goes online.'
@@ -20,7 +23,6 @@ async def event_ready():
     ws = bot._ws  # this is only needed to send messages within event_ready
     await ws.send_privmsg(environ['CHANNEL'], f"/me has arrived! 🎉")
 
-# EVENT - ON MESSAGE IN CHAT
 last_payout_time = time()
 @bot.event
 async def event_message(ctx):
@@ -39,8 +41,7 @@ async def event_message(ctx):
 
     # If the stream is live, and people have been in chat for X mins, then they get a payout
     global last_payout_time
-    minimum_secs_between_payouts = int(environ['MINIMUM_SECS_BETWEEN_PAYOUTS'])
     secs_since_last_payout = (time() - last_payout_time)
-    if (secs_since_last_payout > minimum_secs_between_payouts) and (await bot.get_stream(environ['CHANNEL']) is not None):
-        await give_all_chat_users_gil(int(environ['AMOUNT_TO_PAY_OUT_REGULARLY']))
+    if (secs_since_last_payout > MINIMUM_SECS_BETWEEN_PAYOUTS) and (await bot.get_stream(environ['CHANNEL']) is not None):
+        await give_all_chat_users_currency(AMOUNT_TO_PAY_OUT_REGULARLY)
         last_payout_time = time()
