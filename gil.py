@@ -1,4 +1,5 @@
 # gil.py
+# Tom Taylor / Version Control
 # The currency used by Version Control Bot
 
 from enum import Enum
