@@ -19,7 +19,7 @@ async def event_ready():
     streamer_info = await bot.get_users(environ['CHANNEL'])
     set_streamer_info(streamer_info[0])
 
-    print(f"{environ['BOT_NICK']} is online!")
+    print(f"{environ['BOT_NICK']} has successfully entered {environ['CHANNEL']}'s chat! 🎉")
     ws = bot._ws  # this is only needed to send messages within event_ready
     await ws.send_privmsg(environ['CHANNEL'], f"/me has arrived! 🎉")
 
